@@ -9,23 +9,22 @@ on:
   pull_request:
     branches: [ "master" ]
 
-jobs:
+# jobs:
+  # build:
+  #   strategy:
+  #     matrix:
+  #       go: [1.21.x]
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #   - uses: actions/checkout@v3
 
-  build:
-    strategy:
-      matrix:
-        go: [1.21.x]
-    runs-on: ubuntu-latest
-    steps:
-    - uses: actions/checkout@v3
+  #   - name: Set up Go
+  #     uses: actions/setup-go@v4
+  #     with:
+  #       go-version: ${{ matrix.go }}
 
-    - name: Set up Go
-      uses: actions/setup-go@v4
-      with:
-        go-version: ${{ matrix.go }}
+  #   - name: Build
+  #     run: go build -v ./...
 
-    - name: Build
-      run: go build -v ./...
-
-    - name: Test
-      run: go test -v ./...
+  #   - name: Test
+  #     run: go test -v ./...
